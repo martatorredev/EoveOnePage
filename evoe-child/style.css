@@ -1,0 +1,36 @@
+/*
+Theme Name:   EvoeChildTheme
+Description:  Child theme para modificaciones varias
+Author:       Marta Torre
+Author URI:   https://martatorre.dev
+Template:     twentytwentythree
+Version:      1.0.0
+License:      GNU General Public License v2 or later
+License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/*GENERALES*/
+:root {
+    --text-size-12: 0.75rem;
+    --text-size-14: 0.875rem;
+    --text-size-15: 0.938rem;
+}
+body {
+    font-family: var(--wp--preset--font-family--fira-sans), sans-serif;
+    font-weight: 400;
+}
+h1, h2, h3, h4, h5, h6, strong {
+    font-family: var(--wp--preset--font-family--fira-sans-bold), sans-serif;
+    font-weight: 700;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+.text-12 {
+    font-size: var(--text-size-12);
+}
+
+/*HELPERS*/
+.mt-0 {
+    margin-top: 0 !important;
+}
