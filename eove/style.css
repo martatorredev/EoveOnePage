@@ -1,7 +1,6 @@
 /*
-Theme Name:   Eove
-Theme Name:   EvoeChildTheme
-Description:  Child theme para modificaciones varias
+Theme Name:   EOVE
+Description:  Custom child theme for twentytwentythree
 Author:       Marta Torre
 Author URI:   https://martatorre.dev
 Template:     twentytwentythree
@@ -24,9 +23,11 @@ h1, h2, h3, h4, h5, h6, strong {
     font-family: var(--wp--preset--font-family--fira-sans-bold), sans-serif;
     font-weight: 700;
 }
+.wp-site-blocks {
+    padding-bottom: 0;
+}
 
 /*HELPERS*/
-
 .uppercase {
     text-transform: uppercase;
 }
@@ -40,6 +41,9 @@ h1, h2, h3, h4, h5, h6, strong {
     width:1px;
     height:1px;
     overflow:hidden;
+}
+.size-vw {
+    font-size: 3.5vw;
 }
 
 /* HEADER */
@@ -56,15 +60,16 @@ body .is-layout-flow > * + * {
     margin-block-end: 0;
 }
 
-.uppercase {
-    text-transform: uppercase;
+/* HOME */
+figure.hero-eove-img {
+    text-align: center;
+    margin-bottom: 0;
 }
-.text-12 {
-    font-size: var(--text-size-12);
+figure.hero-eove-img > img {
+    max-width: 20vw;
 }
-
-/*HELPERS*/
-.mt-0 {
-    margin-top: 0 !important;
+@media screen and (min-width: 1570px){
+    .home-hero-cover {
+        min-height: 500px;
+    }
 }
-

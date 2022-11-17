@@ -1,0 +1,69 @@
+{
+	"version": 2,
+	"settings": {
+		"typography": {
+			"fontFamilies": [
+				{
+					"fontFamily": "\"Fira Sans\", sans serif",
+					"name": "Fira Sans",
+					"slug": "fira-sans",
+					"fontFace": [
+						{
+							"fontFamily": "Fira Sans",
+							"fontWeight": "300 400 500",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fira-sans-v16-latin-regular.woff2" ]
+						},
+						{
+							"fontFamily": "Fira Sans",
+							"fontWeight": "300 400 500",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/fira-sans-v16-latin-regular.woff2" ]
+						}
+					]
+				},
+                {
+					"fontFamily": "\"Fira Sans Bold\", sans serif",
+					"name": "Fira Sans Bold",
+					"slug": "fira-sans-bold",
+					"fontFace": [
+						{
+							"fontFamily": "Fira Sans Bold",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/FiraSans-Bold.woff2" ]
+						},
+						{
+							"fontFamily": "Fira Sans Bold",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./assets/FiraSans-BoldItalic.woff2" ]
+						}
+					]
+				}
+			]
+		},
+        "blocks": {
+			"core/site-title": {
+				"typography": {
+					"fontFamilies": [
+						{
+							"fontFamily": "Fira Sans Bold, sans-serif",
+							"slug": "fira-sans-bold",
+							"name": "Fira Sans Bold",
+                            "src": [ "file:./assets/FiraSans-Bold.woff2" ]
+						}
+					]
+				}
+			}
+		},
+		"layout": {
+			"contentSize": "900px",
+			"wideSize": "1140px"
+		}
+	}
+}
