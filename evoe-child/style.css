@@ -1,5 +1,6 @@
 /*
 Theme Name:   Eove
+Theme Name:   EvoeChildTheme
 Description:  Child theme para modificaciones varias
 Author:       Marta Torre
 Author URI:   https://martatorre.dev
@@ -25,6 +26,7 @@ h1, h2, h3, h4, h5, h6, strong {
 }
 
 /*HELPERS*/
+
 .uppercase {
     text-transform: uppercase;
 }
@@ -53,3 +55,16 @@ body .is-layout-flow > * + * {
     margin-block-start: 0;
     margin-block-end: 0;
 }
+
+.uppercase {
+    text-transform: uppercase;
+}
+.text-12 {
+    font-size: var(--text-size-12);
+}
+
+/*HELPERS*/
+.mt-0 {
+    margin-top: 0 !important;
+}
+
