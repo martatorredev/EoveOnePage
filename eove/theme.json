@@ -9,18 +9,18 @@
 					"slug": "fira-sans",
 					"fontFace": [
 						{
-							"fontFamily": "Fira Sans Regular",
-							"fontWeight": "400",
+							"fontFamily": "Fira Sans",
+							"fontWeight": "300 400 500",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
-							"src": [ "file:./assets/FiraSans-Regular.woff2" ]
+							"src": [ "file:./assets/fira-sans-v16-latin-regular.woff2" ]
 						},
 						{
-							"fontFamily": "Fira Sans Regular",
-							"fontWeight": "400",
+							"fontFamily": "Fira Sans",
+							"fontWeight": "300 400 500",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
-							"src": [ "file:./assets/FiraSans-Italic.woff2" ]
+							"src": [ "file:./assets/fira-sans-v16-latin-regular.woff2" ]
 						}
 					]
 				},
