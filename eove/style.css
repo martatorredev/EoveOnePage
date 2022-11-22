@@ -35,6 +35,9 @@ mark.kt-highlight {
 body .is-layout-flex {
     gap: 2.5rem;
 }
+.wp-block-image.aligncenter, .wp-block-image .aligncenter, .wp-block-image.alignleft, .wp-block-image .alignleft, .wp-block-image.alignright, .wp-block-image .alignright {
+    display: block;
+}
 
 /*HELPERS*/
 .uppercase {
@@ -69,10 +72,24 @@ header .transparent-header {
     right: 0;
     z-index: 3;
 }
-
 body .is-layout-flow > * + * {
     margin-block-start: 0;
     margin-block-end: 0;
+}
+
+/* FOOTER */
+footer.wp-block-template-part {
+    margin-block-start: 0;
+}
+
+/* BOTONES */
+.wp-block-button.black-btn > .wp-block-button__link {
+    background-color: var(--wp--preset--color--contrast);
+    color: white;
+}
+.wp-block-button.black-btn > .wp-block-button__link:hover {
+    background-color: var(--wp--preset--color--tertiary);
+    color: var(--wp--preset--color--contrast);
 }
 
 /* HOME */
@@ -90,8 +107,16 @@ figure.hero-eove-img {
 .home .sobre-mi-par .kt-highlight {
     font-size: var(--text-size-32);
 }
-.trayectoria-section {
-    z-index: -1;
+.sobre-mi-cover {
+    z-index: 2;
+}
+.home .imagen-microfono {
+    margin-bottom: 3px;
+}
+.home .main-hero-btn.wp-block-button > .wp-block-button__link {
+    border-radius: 16px 16px 0 0;
+    text-transform: uppercase;
+    font-size: 1.25rem;
 }
 @media screen and (min-width: 1570px){
     .home-hero-cover {
@@ -109,8 +134,8 @@ figure.hero-eove-img {
         max-width: 20vw;
     }
     .trayectoria-section {
-        margin-top: -18rem;
-        margin-block-start: -18rem !important;
+        margin-top: -30rem;
+        margin-block-start: -30rem !important;
     }
 }
 @media screen and (max-width: 781px) {
