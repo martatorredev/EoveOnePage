@@ -31,3 +31,7 @@ function eove_styles() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'eove_styles' );
+
+add_action( 'enqueue_js', function() {
+	wp_enqueue_script('eove-script', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0', 'true' );
+} );

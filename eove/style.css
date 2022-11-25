@@ -14,6 +14,7 @@ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
     --text-size-12: 0.75rem;
     --text-size-14: 0.875rem;
     --text-size-15: 0.938rem;
+    --text-size-20: 1.25rem;
     --text-size-24: 1.5rem;
     --text-size-32: 2rem;
 }
@@ -38,6 +39,12 @@ body .is-layout-flex {
 .wp-block-image.aligncenter, .wp-block-image .aligncenter, .wp-block-image.alignleft, .wp-block-image .alignleft, .wp-block-image.alignright, .wp-block-image .alignright {
     display: block;
 }
+html {
+    scroll-behavior: smooth;
+}
+.wpcf7-list-item {
+    display: block;
+}  
 
 /*HELPERS*/
 .uppercase {
@@ -54,6 +61,9 @@ body .is-layout-flex {
     height:1px;
     overflow:hidden;
 }
+.flex {
+    display: flex;
+}
 .size-vw {
     font-size: 3.5vw;
 }
@@ -63,10 +73,38 @@ body .is-layout-flex {
 .text-size-24 {
     font-size: var(--text-size-24);
 }
+.index-2 {
+    z-index: 2;
+}
+.filter-secondary-color {
+    filter: invert(69%) sepia(50%) saturate(6841%) hue-rotate(237deg) brightness(94%) contrast(104%);
+}
+.filter-terciary-color {
+    filter: invert(86%) sepia(45%) saturate(568%) hue-rotate(109deg) brightness(89%) contrast(94%);
+}
+
+/* ARROW DOWN */
+@keyframes jumpInfinite {
+    0% {
+      margin-top: 0;
+    }
+    50% {
+      margin-top: 20px;
+    }
+    100% {
+      margin-top: 0;
+    }
+}
+.arrow-down {
+    position: absolute;
+    left: 0;
+    right: 0;
+    animation: jumpInfinite 1.5s infinite;
+}
 
 /* HEADER */
 header .transparent-header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -91,6 +129,22 @@ footer.wp-block-template-part {
     background-color: var(--wp--preset--color--tertiary);
     color: var(--wp--preset--color--contrast);
 }
+.wp-block-button__link:hover {
+    background-color: var(--wp--preset--color--tertiary);
+    color: var(--wp--preset--color--contrast);
+}
+input[type=submit] {
+    background-color: var(--wp--preset--color--primary);
+    color: var(--wp--preset--color--contrast);
+    font-family: "Fira Sans Bold", sans serif;
+    border: 0;
+    padding: calc(0.667em + 2px) calc(1.333em + 2px);
+    font-size: var(--text-size-20);
+}
+input[type=submit]:hover {
+    background-color: var(--wp--preset--color--tertiary);
+}
+
 
 /* HOME */
 .hero-cover {
@@ -107,16 +161,40 @@ figure.hero-eove-img {
 .home .sobre-mi-par .kt-highlight {
     font-size: var(--text-size-32);
 }
-.sobre-mi-cover {
-    z-index: 2;
-}
 .home .imagen-microfono {
     margin-bottom: 3px;
 }
-.home .main-hero-btn.wp-block-button > .wp-block-button__link {
-    border-radius: 16px 16px 0 0;
+.home-hero-cover.wp-block-cover > img.wp-block-cover__image-background {
+    max-width: 350px;
+    max-height: 350px;
+    top: calc(50% - 175px);
+    left: calc(50% - 175px);
+}
+.alimentologo-logo img {
+    max-width: 260px;
+}
+.jpod18-logo img {
+    max-width: 350px;
+}
+.lista-premios {
+    list-style: none;
+    padding-left: 0;
+    text-align: center;
     text-transform: uppercase;
-    font-size: 1.25rem;
+    font-size: var(--text-size-20);
+}
+.lista-premios > li {
+    margin-bottom: 0.5em;
+}
+form .flex.nombre-email {
+    flex-direction: column;
+}
+#servicios-columns .wp-block-cover {
+    overflow: hidden;
+}
+#servicios-columns .wp-block-cover:hover > img {
+    transform: scale(1.1);
+    transition: transform .3s ease-in-out;
 }
 @media screen and (min-width: 1570px){
     .home-hero-cover {
@@ -124,18 +202,25 @@ figure.hero-eove-img {
     }
 }
 @media screen and (min-width: 921px) {
-    .hero-cover h2 {
+    .hero-cover h1 {
         font-size: 4.5vw;
     }
-    .hero-cover h3 {
+    .hero-cover h2 {
         font-size: 3vw;
     }
     figure.hero-eove-img > img {
         max-width: 20vw;
     }
-    .trayectoria-section {
-        margin-top: -30rem;
-        margin-block-start: -30rem !important;
+    .trayectoria-section figure {
+        position: relative;
+    }
+    .trayectoria-section figure > img {
+        position: absolute;
+        top: -27em;
+    }
+    form .flex.nombre-email {
+        gap: 10px;
+        flex-direction: row;
     }
 }
 @media screen and (max-width: 781px) {
@@ -149,4 +234,14 @@ figure.hero-eove-img {
     figure.hero-eove-img > img {
         max-width: 200px;
     }
+}
+
+/* FORMULARIO */
+form.wpcf7-form input[type=text], form.wpcf7-form input[type=email] {
+    width: 100%;
+    box-sizing: border-box;
+}
+form.wpcf7-form textarea {
+    width: 100%;
+    height: 100px;
 }
