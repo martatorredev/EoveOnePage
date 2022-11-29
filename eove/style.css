@@ -44,7 +44,11 @@ html {
 }
 .wpcf7-list-item {
     display: block;
-}  
+    margin-left: 0;
+}
+.wp-block-post-content a:where(:not(.wp-element-button)) {
+    color: var(--wp--preset--color--contrast);
+}
 
 /*HELPERS*/
 .uppercase {
@@ -196,6 +200,10 @@ form .flex.nombre-email {
     transform: scale(1.1);
     transition: transform .3s ease-in-out;
 }
+.hover-scale img:hover {
+    transform: scale(1.1);
+    transition: transform .1s ease;
+}
 @media screen and (min-width: 1570px){
     .home-hero-cover {
         min-height: 500px;
@@ -239,9 +247,46 @@ form .flex.nombre-email {
 /* FORMULARIO */
 form.wpcf7-form input[type=text], form.wpcf7-form input[type=email] {
     width: 100%;
+}
+form.wpcf7-form input[type=text], form.wpcf7-form input[type=email], form.wpcf7-form input[type=date],
+form select {
     box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid var(--wp--preset--color--primary);
+    font-size: 1rem;
+    font-family: var(--wp--preset--font-family--fira-sans);
+    background-color: transparent;
 }
 form.wpcf7-form textarea {
     width: 100%;
     height: 100px;
+    padding: 10px;
+    border: 1px solid var(--wp--preset--color--primary);
+    font-size: 1rem;
+    font-family: var(--wp--preset--font-family--fira-sans);
+}
+form .consent-description {
+    display: none;
+    font-size: 0.9rem;
+}
+form .enunciado {
+    font-family: var(--wp--preset--font-family--fira-sans-bold), sans-serif;
+}
+form .wpcf7-list-item-label {
+    font-size: 1rem;
+}
+form .wpcf7-not-valid-tip {
+    font-family: var(--wp--preset--font-family--fira-sans), sans-serif;
+    font-size: 0.9rem;
+}
+form input[type=checkbox] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    margin-right: 5px;
+}
+
+/* PROYECTOS */
+body .wp-block-query.lista-contenidos {
+    max-width: 1140px !important;
 }
