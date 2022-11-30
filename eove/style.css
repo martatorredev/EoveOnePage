@@ -123,6 +123,12 @@ body .is-layout-flow > * + * {
 footer.wp-block-template-part {
     margin-block-start: 0;
 }
+@media screen and (max-width: 781px) {
+    footer nav > ul.wp-block-navigation__container {
+        justify-content: center;
+        gap: 0.9em;
+    }
+}
 
 /* BOTONES */
 .wp-block-button.black-btn > .wp-block-button__link {
@@ -174,12 +180,6 @@ figure.hero-eove-img {
     top: calc(50% - 175px);
     left: calc(50% - 175px);
 }
-.alimentologo-logo img {
-    max-width: 260px;
-}
-.jpod18-logo img {
-    max-width: 350px;
-}
 .lista-premios {
     list-style: none;
     padding-left: 0;
@@ -230,6 +230,12 @@ form .flex.nombre-email {
         gap: 10px;
         flex-direction: row;
     }
+    .alimentologo-logo img {
+        max-width: 260px;
+    }
+    .jpod18-logo img {
+        max-width: 350px;
+    }
 }
 @media screen and (max-width: 781px) {
     .hero-cover {
@@ -241,6 +247,24 @@ form .flex.nombre-email {
     }
     figure.hero-eove-img > img {
         max-width: 200px;
+    }
+    h3 {
+        font-size: 2rem;
+        line-height: 120%;
+    }
+    .fila-logos.wp-block-group {
+        flex-wrap: wrap;
+        margin-bottom: 2em;
+    }
+    .fila-logos > figure {
+        max-width: 45%;
+        flex-basis: 40%;
+    }
+    .trayectoria-section .wp-block-columns {
+        flex-direction: column-reverse;
+    }
+    .trayectoria-section figure > img {
+        margin-top: -8em;
     }
 }
 
@@ -289,4 +313,31 @@ form input[type=checkbox] {
 /* PROYECTOS */
 body .wp-block-query.lista-contenidos {
     max-width: 1140px !important;
+}
+
+/* PAGINA 404 */
+.error404 h1 {
+    text-align: center;
+}
+
+/* COOKIES */
+#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton {
+    color: var(--wp--preset--color--contrast) !important;
+    font-family: var(--wp--preset--font-family--fira-sans-bold);
+}
+#moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn{
+    color: var(--wp--preset--color--primary) !important;
+    opacity: 1 !important;
+}
+#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton:hover{
+    background-color: var(--wp--preset--color--tertiary) !important;
+    color: var(--wp--preset--color--contrast) !important;
+}
+#moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn:hover {
+    color: var(--wp--preset--color--contrast) !important;
+}
+#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button,
+#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,
+#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton.moove-gdpr-modal-save-settings {
+    color: var(--wp--preset--color--contrast) !important;
 }
