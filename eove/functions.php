@@ -32,6 +32,23 @@ function eove_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'eove_styles' );
 
-add_action( 'enqueue_js', function() {
-	wp_enqueue_script('eove-script', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0', 'true' );
-} );
+add_action( 'wp_enqueue_scripts', 'add_script');
+
+
+function add_script(){
+	wp_enqueue_script('eove-script', get_bloginfo( 'stylesheet_directory' ) . '/js/scripts.js', array(), '1.0.0', 'true' );
+
+	if ( 'proyectos' == get_post_type() ){
+		global $post;
+		$post_id = $post->ID;
+		$url_proyect = get_field(  'enlace_a_proyecto', $post_id);
+
+	}
+
+	$eove_Public = [
+		'url'   => admin_url( 'admin-ajax.php' ),
+		'nonce' => wp_create_nonce( 'eove_seg' ),
+		'project' => $url_proyect,
+	];
+	wp_localize_script( 'eove-script', 'eove_Public', $eove_Public );
+}
